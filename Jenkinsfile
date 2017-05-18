@@ -28,7 +28,7 @@ try {
         }
     }
 } catch (e) {
-node {
+    node {
         notifyPuzzleChat('jenkins-techlab')
     }
     throw e
@@ -40,5 +40,4 @@ node {
             notifyPuzzleChat('jenkins-techlab')
         }
     }
-}
 }
