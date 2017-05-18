@@ -9,13 +9,13 @@ pipeline {
         pollSCM('H/5 * * * *')
         cron('@midnight')
     }
-    environment {
-        GREETINGS_TO = 'Jenkins Techlab'
+    parameters {
+        string(name: 'Greetings_to', defaultValue: 'Jenkins Techlab', description: 'Who to greet?')
     }
     stages {
         stage('Greeting') {
             steps {
-                echo "Hello, ${env.GREETINGS_TO} ${BUILD_ID}!"
+                echo "Hello, ${params.Greetings_to}!"
             }
         }
     }
